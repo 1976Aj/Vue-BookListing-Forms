@@ -3,7 +3,7 @@
     <h1>{{title}}</h1>
     <input type="text" placeholder="Search Books" v-model="searchInput">
     <ul class="exists">
-      <book-item v-for="books in searchedBooks" :key="book.id" :book="book"></book-item>
+      <book-item v-for="book in searchedBooks" :key="book.id" :book="book"></book-item>
     </ul>
     <hr>
     <h2>Filtered Books by Ownership</h2>
@@ -64,7 +64,7 @@ export default {
       return _.filter(this.books, ["ownership", this.holding]);
     },
     searchedBooks() {
-      const searchfilter = book => {
+      const searchFilter = book => {
         return book.title.toLowerCase().match(this.searchInput.toLowerCase());
       };
       return _.filter(this.books, searchFilter);
