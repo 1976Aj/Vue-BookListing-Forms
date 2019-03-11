@@ -11,11 +11,11 @@
     <div>
       <label for="borrowed">
         Borrowed
-        <input type="checkbox" v-model="bookData.ownership">
+        <input type="radio" v-model="bookData.ownership">
       </label>
       <label for="bought">
         Bought
-        <input type="checkbox" v-model="bookData.ownership">
+        <input type="radio" v-model="bookData.ownership">
       </label>
     </div>
     <button type="submit" name="button">Add Book</button>
